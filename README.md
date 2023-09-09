@@ -13,15 +13,9 @@
 <table>
   <tr>
     <td align="center"><a href="https://github.com/Miintoo"><img src="https://avatars.githubusercontent.com/u/96560613?s=400&u=0c4c19ddddc78442134a66831120d34d87b469ac&v=4" width="100px;" alt=""/><br /><sub><b>Mintoo</b></sub></a><br /></td>  
-  </tr>
-  <tr>
-    <td align="center"><a href="https://github.com/hamelln?tab=repositories"><img src="https://avatars.githubusercontent.com/u/39308313?v=4" width="100px;" alt=""/><br /><sub><b>taehyun</b></sub></a><br /></td>  
-  </tr>
-  <tr>
+    <td align="center"><a href="https://github.com/hamelln?tab=repositories"><img src="https://avatars.githubusercontent.com/u/39308313?v=4" width="100px;" alt=""/><br /><sub><b>taehyun</b></sub></a><br /></td> 
     <td align="center"><a href="https://github.com/norong316"><img src="https://avatars.githubusercontent.com/u/121424431?v=4" width="100px;" alt=""/><br /><sub><b>hyobeen</b></sub></a><br /></td>  
-  </tr>
-  <tr>
-    <td align="center"><a href="https://github.com/Chadolbaegi128"><img src="https://avatars.githubusercontent.com/u/91059184?v=4" width="100px;" alt=""/><br /><sub><b>Yeonjun Jung</b></sub></a><br /></td>  
+   <td align="center"><a href="https://github.com/Chadolbaegi128"><img src="https://avatars.githubusercontent.com/u/91059184?v=4" width="100px;" alt=""/><br /><sub><b>Yeonjun Jung</b></sub></a><br /></td> 
   </tr>
 </table>
 
