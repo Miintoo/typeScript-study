@@ -16,6 +16,7 @@
     <td align="center"><a href="https://github.com/hamelln?tab=repositories"><img src="https://avatars.githubusercontent.com/u/39308313?v=4" width="100px;" alt=""/><br /><sub><b>taehyun</b></sub></a><br /></td> 
     <td align="center"><a href="https://github.com/norong316"><img src="https://avatars.githubusercontent.com/u/121424431?v=4" width="100px;" alt=""/><br /><sub><b>hyobeen</b></sub></a><br /></td>  
    <td align="center"><a href="https://github.com/Chadolbaegi128"><img src="https://avatars.githubusercontent.com/u/91059184?v=4" width="100px;" alt=""/><br /><sub><b>Yeonjun Jung</b></sub></a><br /></td> 
+   <td align="center"><a href="https://github.com/hyunjoogo"><img src="https://avatars.githubusercontent.com/u/73145963?v=4" width="100px;" alt=""/><br /><sub><b>hyunjoogo</b></sub></a><br /></td> 
   </tr>
 </table>
 
