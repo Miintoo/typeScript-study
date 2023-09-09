@@ -14,6 +14,15 @@
   <tr>
     <td align="center"><a href="https://github.com/Miintoo"><img src="https://avatars.githubusercontent.com/u/96560613?s=400&u=0c4c19ddddc78442134a66831120d34d87b469ac&v=4" width="100px;" alt=""/><br /><sub><b>Mintoo</b></sub></a><br /></td>  
   </tr>
+  <tr>
+    <td align="center"><a href="https://github.com/hamelln?tab=repositories"><img src="https://avatars.githubusercontent.com/u/39308313?v=4" width="100px;" alt=""/><br /><sub><b>taehyun</b></sub></a><br /></td>  
+  </tr>
+  <tr>
+    <td align="center"><a href="https://github.com/norong316"><img src="https://avatars.githubusercontent.com/u/121424431?v=4" width="100px;" alt=""/><br /><sub><b>hyobeen</b></sub></a><br /></td>  
+  </tr>
+  <tr>
+    <td align="center"><a href="https://github.com/Chadolbaegi128"><img src="https://avatars.githubusercontent.com/u/91059184?v=4" width="100px;" alt=""/><br /><sub><b>Yeonjun Jung</b></sub></a><br /></td>  
+  </tr>
 </table>
 
 ## 4. 기간
@@ -30,11 +39,11 @@
 2. 기본 문법 익히기
 3. lib.es5.d.ts 분석하기
 4. 타입스크립트 프로젝트 설정하기
-5. jQuery 타입 분석하기 
+5. jQuery 타입 분석하기
 6. Axios 타입 분석하기
 7. React 타입 분석하기
 8. Nodejs 타입 분석하기
-10. 패키지 직접 타이핑하기
+9. 패키지 직접 타이핑하기
 
 ## 7. 스터디 진행 방식
 
