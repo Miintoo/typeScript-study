@@ -35,6 +35,23 @@ const arr = [1, 'zero'] as const // const arr: readonly [1, 'zero']
 객체로 선언할경우 내부 값이 바뀔 수 있기 때문에 넓게 타입추론을 한다.
 이를 막고 싶으면 as const 문법을 통해서 고정된 값으로 만들 수 있다. 
 
+```js
+function getColor(code: 'red' | 'green' | 'blue'): string {
+    switch (code) {
+        case 'red':
+            return '#FF0000';
+        case 'green':
+            return '#00FF00';
+        case 'blue':
+            return '#0000FF';
+        default:
+            // TypeScript는 여기에서 코드가 'red', 'green', 'blue' 중 하나임을 인식합니다.
+            // 그 외의 값은 컴파일 오류가 발생합니다.
+            throw new Error('Invalid color code');
+    }
+}
+```
+
 ## 2.4 배열 말고 튜플도 있다.
 
 일단 튜플은 각 요소 자리에 타입이 고정되어 있는 배열을 튜플이라고 한다.
