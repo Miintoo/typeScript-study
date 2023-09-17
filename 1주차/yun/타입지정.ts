@@ -16,3 +16,7 @@ const result = plus(1, 2);
 
 // Object 타입  
 const str3: {} = 'hello';
+
+// object 타입
+const obj2: {name: string} = {name: 'Yeonjun'};
+
