@@ -10,3 +10,9 @@ const sameScore: number = 123;
 const plus = (a:number, b:number): number  => {
     return a + b;
 }
+
+// number 타입
+const result = plus(1, 2);
+
+// Object 타입  
+const str3: {} = 'hello';
