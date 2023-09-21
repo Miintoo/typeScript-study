@@ -1,20 +1,3 @@
-class Person {
-  name: string;
-  constructor(name: string) {
-    this.name = name;
-  }
-}
-//@ class의 extends는 super class의 속성을 반드시 충족해야 한다.
-class User extends Person {
-  nickname: string;
-  constructor(name: string, nickname: string) {
-    super(name);
-    this.nickname = nickname;
-  }
-}
-
-const user = new User("현", "Hamelln");
-
 //@ type extends할 경우에도 뒤의 타입을 반드시 충족해야 사용 가능하다.
 function getProperty<T, O extends keyof T>(obj: T, key: O) {
   return obj[key];
