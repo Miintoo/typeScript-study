@@ -55,7 +55,7 @@ let b:B = { name: "현" }
 a = b; //❗ Error: 타입 이름이 다르면 구조가 같아도 거절.
 ```
 ### 2️⃣ 구조적 타이핑(Structure Typing)  
-![index-type-1](https://github.com/hamelln/typescript-textbook/assets/39308313/e0b7a4c9-4777-4523-8d66-e23933b2db32)
+![duck-typing-2](https://github.com/Miintoo/typeScript-study/assets/39308313/2f425ee9-8f04-4fc6-84a6-86fad44cc7d2)  
 **타입스크립트가 채택한 방식. 필수 구조만 같으면 동일**하다고 인정.  
 구조적 타이핑은 덕 타이핑이라고 부르기도 한다. 간단한 설명을 보고 가자.  
 
