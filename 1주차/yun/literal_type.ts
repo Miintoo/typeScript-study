@@ -20,15 +20,18 @@ const obj4 = {name: 'Yeonjun'};
 const obj5 = {name: 'Yeonjun'} as const;
 // 해당 객체에서 name 프로퍼티의 값을 변경할 수 없다.
 
-// Function 타입(화살표 함수)
+// Function 리터럴(화살표 함수)
 const func: (amount: number, unit: string) => string
-= (amout, unit) => amout + unit;
+= (amount, unit) => amount + unit;
 
-// 배열
+// 배열 리터럴
 const arr: [1, 3, 'five'] = [1, 3, 'five'];
 
 const arr2 = [1, 3, 'five'];
 // (string | number)[] 타입 
+// 유니온 타입과 배열 타입의 결합
 
 const arr3 = [1, 3, 'five'] as const;
 // 해당 배열에는 요소를 빼거나 더할 수 없다.
+
+
