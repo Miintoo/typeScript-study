@@ -64,3 +64,44 @@ tuple.push('yes');
 const tuple2: readonly [number, boolean, string] = [2, false, 'hi'];
 tuple2.push('no');
 // Property 'push' does not exist on type 'readonly [number, boolean, string]'
+
+const tuple3: [number, number, number] = [123, 4, 56];
+tuple3[3].toFixed();
+// Object is possibly 'undefined'
+
+/*
+    튜플에 전개 연산자 적용하기
+    => '...타입[]' 표기를 사용해서 특정 타입이 연달아 나올 수 있다.
+    
+    타입을 작성하지 않고 값에 전개 연산자를 작성해도 타입 추론을 할 수 있다.
+*/
+
+const tupleList: [string, number, ...boolean[]] = ['hi', 1, false, true, false];
+const tupleList2: [string, ...number[], boolean] = ['hell0', 1, 2, 3, true];
+const tupleList3: [...string[], number, boolean] = ['hi', 'hello', 'yeonjun', 3, false];
+
+const tupleList4 = [true, false, true, 34.5, 'hi'];
+const tupleList5 = [46, ...tupleList4];
+// const tupleList4: (string | number | boolean)[]
+
+/*
+    튜플에 나머지 연산자 적용하기, 구조분해 할당에 나머지 연산자 적용하기
+*/
+
+const [a, ...rest1] = ['hello', '1', '2', 3, 4];
+
+const [b, ...rest2]: [string, ...number[]] = ['name', 1, 33, 234, 56.3];
+// 명시적 타이핑, 튜플에 나머지 연산자 적용
+
+/*
+    옵셔널 수식어가 포함된 타입 선언
+*/
+
+let tupleList6: [string, number?, boolean?] = ['yes', 2, false];
+tupleList6 = ['hello'];
+tupleList6 = ['hello', 2];
+tupleList6 = ['hello', false];
+// Type 'boolean' is not assignable to type 'number | undefined'
+
+
+
