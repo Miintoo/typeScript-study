@@ -1,7 +1,7 @@
 //? 함수의 rest 문법은 마지막 자리에만 적용 가능.
-// function badRestFunc(...a: string[], b: number) {
-//   return b;
-// }
+function badRestFunc(...a: string[], b: number) {
+  return b;
+}
 
 function goodRestFunc(a: string, ...b: number[]) {
   return a;

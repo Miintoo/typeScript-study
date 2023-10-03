@@ -1,3 +1,5 @@
+$\textcolor{red}{\textsf{}}$
+
 # 네임스페이스
 
 이름이 겹치면 안 되는 인터페이스, 타입, 클래스, 특정한 값은 네임스페이스로 **유일성**을 보장한다.  
@@ -11,10 +13,10 @@
 
 ![optional](https://github.com/hamelln/typescript-textbook/assets/39308313/60276aa3-d0ce-4fc5-9585-917b37460052)
 
-아마 보통은 이렇게 생각할 것이다.
+아마 보통은 이렇게 생각할 것이다.  
 
 ✅ $\textcolor{#ffffffc7}{\textsf{할당한다면 string만 허용하자.}}$  
-❌ $\textcolor{#ed322199}{\textsf{undefined도 할당 OK}}$
+❌ $\textcolor{#ed322199}{\textsf{undefined도 할당 OK}}$  
 
 일부러 undefined가 할당되는 것을 방지하려면 `tsconfig.ts`에서 `exactOptionalPropertyTypes: true`로 바꾼다.
 
@@ -23,27 +25,28 @@
 인터페이스는 **재선언**이 가능하다. 아래 조건을 만족하면 원래의 인터페이스와 **병합**이 일어난다.
 
 1️⃣ 기존 속성의 타입을 바꾸는 건 불가능  
-2️⃣ 기존에 없던 속성과 타입 추가 가능  
-3️⃣ **다른 모듈에서 import한 인터페이스는 병합 불가능**
+2️⃣ 기존에 없던 속성과 타입 추가 가능   
+3️⃣ **다른 모듈에서 import한 인터페이스는 병합 불가능**  
 
-즉, 아래와 같이 인터페이스를 같은 공간에서 작성해야 병합이 된다.
+즉, 같은 scope에서 작성해야 인터페이스가 병합된다. 
 
 ![interface-merging-0](https://github.com/hamelln/typescript-textbook/assets/39308313/9273b7d0-aad5-4c2a-8599-81d206e49feb)
 
 > $\textcolor{#ffffffc7}{\textsf{“굳이?”}}$
 
-굳이 이렇게 병합을 지원하는 건 다른 이유 때문이다.
+굳이 이렇게 병합을 지원하는 건 다른 이유 때문이다.  
+
+![image](https://github.com/hamelln/typescript-textbook/assets/39308313/e1910617-ccc0-486d-aa95-96509e7267d1)
 
 ![interface-merging](https://github.com/hamelln/typescript-textbook/assets/39308313/a820aa90-2720-4732-beab-7aa5822f2c1d)
 
-API 타입을 지정할 때 유용하다.
+개발자가 직접 작성하지 않은 API의 타입을 지정해야 할 상황이 있다. 
+이럴 때 인터페이스 확장은 강력한 힘을 발휘한다.  
 
 # 타입 호환성
 
-타이핑은 여러 종류가 있다.
-
+타이핑은 여러 종류가 있다.  
 ### 1️⃣ 명목적 타이핑(Nominal Typing)
-
 ```
 type A = { name: string }
 type B = { name: string }
@@ -51,11 +54,10 @@ let a:A = { name: "현" }
 let b:B = { name: "현" }
 a = b; //❗ Error: 타입 이름이 다르면 구조가 같아도 거절.
 ```
-
-### 2️⃣ 구조적 타이핑(Structure Typing)
-
+### 2️⃣ 구조적 타이핑(Structure Typing)  
+![duck-typing-2](https://github.com/Miintoo/typeScript-study/assets/39308313/2f425ee9-8f04-4fc6-84a6-86fad44cc7d2)  
 **타입스크립트가 채택한 방식. 필수 구조만 같으면 동일**하다고 인정.  
-구조적 타이핑은 덕 타이핑이라고 부르기도 한다. 간단한 설명을 보고 가자.
+구조적 타이핑은 덕 타이핑이라고 부르기도 한다. 간단한 설명을 보고 가자.  
 
 Q) **“오리란 무엇인가?”**
 
@@ -66,15 +68,15 @@ Q) **“오리란 무엇인가?”**
 
 ![rp0g39w789nqe8uzge8p](https://github.com/hamelln/typescript-textbook/assets/39308313/1b280fe5-0bc6-4c4c-bd15-2b34dd8baeaa)
 
-반박할 여지 없이 완벽한 오리다.(포토샵이라는 의문 안 받음)
+반박할 여지 없이 완벽한 오리다.(포토샵이라는 의문 안 받음)  
 
-코드로도 확인해보자.
+코드로도 확인해보자.  
 
 ![type-compatibility-0](https://github.com/hamelln/typescript-textbook/assets/39308313/19f1a3bb-acf8-436a-bd53-937409660fb0)
 
 객체 지향 프로그래밍 관점으로 보자면 구조적 타이핑은 다형성을 허용한다.  
 버거든 피자든, 음식이라는 조건을 갖추면 칼로리 계산을 허용함으로서 유연성을 발휘한다.  
-그런데 이 유연성이 항상 적용되는 건 아니다. 특별 케이스가 하나 있다.
+그런데 이 유연성이 항상 적용되는 건 아니다. 특별 케이스가 하나 있다.  
 
 ### 객체 리터럴: 엄격하게 검사
 
@@ -86,13 +88,17 @@ TypeScript는 객체 리터럴을 $\textcolor{#3498DB}{\textsf{fresh한 객체}}
 
 ### 브랜딩 기법
 
-잉여 속성이 들어오는 걸 원천 차단하고 싶다면 **브랜딩 기법**을 활용한다.
+잉여 속성이 들어오는 걸 원천 차단하고 싶다면 **브랜딩 기법**을 활용한다.  
 
 ![type-compatibility-3](https://github.com/hamelln/typescript-textbook/assets/39308313/3bef8c15-fec4-432a-b933-5c330b4b7bde)
 
 # 타입 상속
 
 ![type-extends](https://github.com/hamelln/typescript-textbook/assets/39308313/a681f7b3-4787-47f4-9b3b-675e5f213fa8)
+
+# 인덱스 타입
+
+![index-type-1](https://github.com/hamelln/typescript-textbook/assets/39308313/9ad253c7-1f57-44fa-aa54-9cd403af4fd0)
 
 # 제네릭
 
@@ -104,9 +110,33 @@ C#, Java 같은 정적 타입 언어들은 다양한 타입이 들어와도 유�
 제네릭은 아무 때나 쓰는 게 아니라 재사용과 추상화가 필요하고, 코드가 조금 복잡한 경우에 쓰는 게 좋다.  
 단순한 경우에는 제네릭 없이 타입만 명시한다.
 
+### 타입 제한
+
+![constraint-1](https://github.com/hamelln/typescript-textbook/assets/39308313/acc754c2-57fa-4edf-a8be-188cf3659088)
+
+### 조건부 타입과 타입 제한
+
+![constraint-2](https://github.com/hamelln/typescript-textbook/assets/39308313/bf794727-edb7-4fe0-a6c8-58b9a24091f1)
+
+### 에러 처리와 제네릭
+
+에러는 수많은 원인과 속성이 있기 때문에 타입 단언을 못하고 unknown으로 추론한다.  
+대비 가능한 에러 케이스는 작성해두는 게 좋은데, 각 케이스를 전부 개별적으로 작성하는 건 고된 일이다.  
+이럴 때 제네릭을 쓰면 유용하다. 아래 예제 코드를 조금 훑어보면 작성하는 측에서 ErrorName만 신경쓰면 됨을 알 수 있다.  
+그 ErrorName마저도 유니온으로 지정돼있기 때문에 타입스크립트에서 자동 완성을 제공해준다.  
+
+![image](https://github.com/hamelln/typescript-textbook/assets/39308313/216b302f-5f58-409a-a6cc-9a80b65b6bb0)
+
+### const parameters
+
+TypeScript 5.0에 추가된 기능. 예제 코드를 보자.
+
+![generic-1](https://github.com/hamelln/typescript-textbook/assets/39308313/c309e2c3-c607-4d7c-8ce4-d30be0da4663)
+
 # 참조
 
 - 조현영(2023.08). **타입스크립트 교과서.** 길벗
+- [TypeScript 공식](https://www.typescriptlang.org/)
 - [김병묵(2022.10). TypeScript 타입 시스템 뜯어보기: 타입 호환성](https://toss.tech/article/typescript-type-compatibility)
 - [나를 찾는 아이(2023.07). [typescript] optional 속성에 undefined를 할당할수 있을까?](https://trend21c.tistory.com/2332)
 - [캡틴판교. 제네릭 제약 조건.](https://joshua1988.github.io/ts/guide/generics.html#%EC%A0%9C%EB%84%A4%EB%A6%AD%EC%9D%98-%ED%95%9C-%EC%A4%84-%EC%A0%95%EC%9D%98%EC%99%80-%EC%98%88%EC%8B%9C)
