@@ -26,3 +26,24 @@ function returnUnion(value: string | number): number{
     */    
 }
 
+/*
+    타입 별칭을 구현할 때 타입 앞에 파이프 연산자 ('|') 집어넣기
+*/
+
+type Example =
+| boolean
+| string
+| number[];
+
+type Example2 = {
+    [key: string]: number
+}
+
+let example: Example2 = {
+    hello: 123
+}
+
+let propertyName = 'hello'
+
+example[propertyName];
+
